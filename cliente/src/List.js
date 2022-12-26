@@ -9,7 +9,6 @@ const List = () => {
     axios
       .get("http://localhost:5000/phones")
       .then((response) => {
-        console.log(response)
         setPhones(response.data)
       });
   }, [])
@@ -20,7 +19,7 @@ const List = () => {
         <h1 className="container justify-content-center">List of Phones</h1>
         {phones?.map((phone) => (
           <div className="d-flex p-5 border-bottom my-3" key={phone.id}>
-            <Link className="d-flex text-decoration-none link-dark" to={{ pathname: `/${phone.id}`, params: { phone } }}>
+            <Link className="d-flex text-decoration-none link-dark" to={`/${phone.id}`} state={{ phone }}>
               <div className="p-5">
                 <h1>{phone.name}</h1>
                 <img src={require(`./images/` + (phone.imageFileName))} alt="phone" height="300" width="300" />

@@ -2,7 +2,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom"
 import Home from './Home';
-import Details from "./Detail"
+import Detail from "./Detail"
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Home />
       <Routes>
-        <Route path="/:id" element={<Details />} />
+        <Route path="/:id" element={<Detail />} />
       </Routes>
 
     </div>
